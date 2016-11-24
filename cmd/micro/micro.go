@@ -460,12 +460,13 @@ func main() {
 				CurView().HandleEvent(event)
 			}
 
+			screen.Next()
+
 			select {
 			case event = <-events:
 			default:
 				event = nil
 			}
-
 		}
 	}
 }

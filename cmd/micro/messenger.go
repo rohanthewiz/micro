@@ -119,6 +119,7 @@ func (m *Messenger) YesNoPrompt(prompt string) (bool, bool) {
 
 	_, h := screen.Size()
 	for {
+		screen.Next()
 		m.Clear()
 		m.Display()
 		screen.ShowCursor(Count(m.message), h-1)
@@ -154,6 +155,7 @@ func (m *Messenger) LetterPrompt(prompt string, responses ...rune) (rune, bool) 
 
 	_, h := screen.Size()
 	for {
+		screen.Next()
 		m.Clear()
 		m.Display()
 		screen.ShowCursor(Count(m.message), h-1)
@@ -214,6 +216,7 @@ func (m *Messenger) Prompt(prompt, placeholder, historyType string, completionTy
 
 	RedrawAll()
 	for m.hasPrompt {
+		screen.Next()
 		var suggestions []string
 		m.Clear()
 
